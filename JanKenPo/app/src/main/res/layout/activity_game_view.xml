@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#234C6E"
+    tools:context=".GameView">
+
+    <ImageView
+        android:id="@+id/ivRock"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:contentDescription="@string/image_rock"
+        android:rotation="25"
+        android:scaleX=".9"
+        android:scaleY=".9"
+        app:layout_constraintBottom_toBottomOf="@+id/bFrameRock"
+        app:layout_constraintEnd_toEndOf="@+id/bFrameRock"
+        app:layout_constraintStart_toStartOf="@+id/bFrameRock"
+        app:layout_constraintTop_toTopOf="@+id/bFrameRock"
+        app:srcCompat="@drawable/icon_rock_resized" />
+
+    <ImageView
+        android:id="@+id/ivPaper"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:contentDescription="@string/image_paper"
+        android:rotation="-45"
+        android:scaleX=".9"
+        android:scaleY=".9"
+        app:layout_constraintBottom_toBottomOf="@+id/bFramePaper"
+        app:layout_constraintEnd_toEndOf="@+id/bFramePaper"
+        app:layout_constraintStart_toStartOf="@+id/bFramePaper"
+        app:layout_constraintTop_toTopOf="@+id/bFramePaper"
+        app:srcCompat="@drawable/icon_paper_resized128" />
+
+    <ImageView
+        android:id="@+id/ivScissors"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:contentDescription="@string/image_scissors"
+        android:rotation="-90"
+        android:scaleX=".9"
+        android:scaleY=".9"
+        app:layout_constraintBottom_toBottomOf="@+id/bFrameScissors"
+        app:layout_constraintEnd_toEndOf="@+id/bFrameScissors"
+        app:layout_constraintStart_toStartOf="@+id/bFrameScissors"
+        app:layout_constraintTop_toTopOf="@+id/bFrameScissors"
+        app:srcCompat="@drawable/icon_scissors_resized" />
+
+    <ImageView
+        android:id="@+id/bFrameRock"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/b_image_frame"
+        android:scaleX="1"
+        android:scaleY="1"
+        app:layout_constraintBottom_toBottomOf="@+id/bFramePaper"
+        app:layout_constraintEnd_toStartOf="@+id/bFramePaper"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bFramePaper"
+        app:srcCompat="@drawable/icon_frame_resized" />
+
+    <ImageView
+        android:id="@+id/bFramePaper"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/b_image_frame"
+        android:scaleX="1"
+        android:scaleY="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+        app:srcCompat="@drawable/icon_frame_resized" />
+
+    <ImageView
+        android:id="@+id/bFrameScissors"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/b_image_frame"
+        android:scaleX="1"
+        android:scaleY="1"
+        app:layout_constraintBottom_toBottomOf="@+id/bFramePaper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintStart_toEndOf="@+id/bFramePaper"
+        app:layout_constraintTop_toTopOf="@+id/bFramePaper"
+        app:srcCompat="@drawable/icon_frame_resized" />
+
+    <ImageView
+        android:id="@+id/enemyHandID"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/b_image_frame"
+        app:layout_constraintBottom_toTopOf="@+id/playerHandID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_frame_resized" />
+
+    <ImageView
+        android:id="@+id/playerHandID"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/b_image_frame"
+        app:layout_constraintBottom_toTopOf="@+id/bFramePaper"
+        app:layout_constraintEnd_toEndOf="@+id/enemyHandID"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/enemyHandID"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.797"
+        app:srcCompat="@drawable/icon_frame_resized" />
+
+    <TextView
+        android:id="@+id/ivPlayerScore"
+        android:layout_width="61dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/audiowide"
+        android:gravity="center"
+        android:text="@string/placeholder_score"
+        android:textColor="#FFB300"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/playerHandID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/playerHandID"
+        app:layout_constraintTop_toTopOf="@+id/playerHandID" />
+
+    <TextView
+        android:id="@+id/ivEnemyScore"
+        android:layout_width="61dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/audiowide"
+        android:gravity="center"
+        android:text="@string/placeholder_score"
+        android:textColor="#FFB300"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/enemyHandID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/enemyHandID"
+        app:layout_constraintTop_toTopOf="@+id/enemyHandID" />
+
+    <TextView
+        android:id="@+id/ivWinnerID"
+        android:layout_width="243dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/audiowide"
+        android:gravity="center"
+        android:text="@string/iv_Winner"
+        android:textColor="#FFB300"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/playerHandID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enemyHandID" />
+
+</android.support.constraint.ConstraintLayout>

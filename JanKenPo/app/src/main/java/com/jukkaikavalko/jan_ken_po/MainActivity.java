@@ -1,0 +1,111 @@
+package com.jukkaikavalko.jan_ken_po;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+
+public class MainActivity extends AppCompatActivity
+{
+    private Button submitButton;
+    private EditText playerName;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        playerName = findViewById(R.id.etPlayerNameID);
+        submitButton = findViewById(R.id.bSubmitID);
+
+        submitButton.setOnClickListener(new OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+
+                if (!playerName.getText().toString().equals(""))
+                {
+                    String msg = playerName.getText().toString();
+                    writeToFile(msg);
+                    Intent intent = new Intent(MainActivity.this, GameView.class);
+                    startActivity(intent);
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this, "Enter Name First", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        try
+        {
+            if (readFromFile() != null){
+                Toast.makeText(MainActivity.this, readFromFile(), Toast.LENGTH_LONG).show();
+            }
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    private void writeToFile(String message)
+    {
+        try
+        {
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("todolist.txt", Context.MODE_PRIVATE));
+            outputStreamWriter.write(message);
+            outputStreamWriter.close(); // always close your streams
+
+        } catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    private String readFromFile() throws IOException
+    {
+        String result = "";
+
+        InputStream inputStream = openFileInput("todolist.txt");
+
+        if (inputStream != null)
+        {
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+            String tempString = "";
+
+            StringBuilder stringBuilder = new StringBuilder();
+
+            while((tempString = bufferedReader.readLine()) != null)
+            {
+                stringBuilder.append(tempString);
+            }
+
+            inputStream.close();
+            result = stringBuilder.toString();
+        }
+
+        return result;
+    }
+
+}

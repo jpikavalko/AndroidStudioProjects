@@ -1,0 +1,30 @@
+<resources>
+    <!--Main activity layout -->
+    <string name="app_name">My First App</string>
+
+    <string name="mButton_name1">Submit Name</string>
+    <string name="mButton_name2">Try Me</string>
+    <string name="shot_alert">Alert</string>
+
+    <string name="mText_name">Hello, Jukka</string>
+    <string name="editText_Hint">Enter your name&#8230;</string>
+    <string name="custom_text">Hello, %1$s</string>
+
+    <!--Try Me layout -->
+    <string name="tryMe_button">Try Me</string>
+
+    <!-- Error messages -->
+    <string name="error_title">Error, Fool!</string>
+    <string name="error_message">I pity the fool</string>
+    <string name="error_positive">OK</string>
+    <string name="error_negative">I\'m fool</string>
+
+    <!-- Radio Buttons -->
+    <string name="yes_button">Yes</string>
+    <string name="maybe_button">Maybe</string>
+    <string name="no_button">No</string>
+    <string name="tv_attending">Attending?</string>
+    <string name="mButton_name3">Radio Buttons</string>
+    <string name="nimi">viesti</string>
+
+</resources>

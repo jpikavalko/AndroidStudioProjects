@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MediaPlayerApp</string>
+    <string name="play_button">PLAY</string>
+    <string name="pause_button">PAUSE</string>
+    <string name="ph_song_name">Song name here...</string>
+    <string name="ph_artist_name">Artist Name</string>
+    <string name="ph_timer">0:00</string>
+</resources>

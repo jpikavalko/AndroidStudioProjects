@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Jan-Ken-Po</string>
+    <string name="image_rock">Rock Image</string>
+    <string name="image_paper">Paper Image</string>
+    <string name="image_scissors">Scissors Image</string>
+    <string name="b_image_frame">Image Frame</string>
+    <string name="iv_Winner">You Win</string>
+    <string name="iv_Tie">Tie</string>
+    <string name="iv_Loser">You Lose</string>
+    <string name="placeholder_score">10</string>
+    <string name="main_submit">Submit</string>
+    <string name="main_name_hint">Your name</string>
+</resources>
