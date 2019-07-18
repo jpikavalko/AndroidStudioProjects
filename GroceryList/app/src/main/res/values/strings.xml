@@ -10,4 +10,8 @@
     <string name="grocery_name">Grocery Name</string>
     <string name="qty_count">Qty</string>
     <string name="dateAdded">Date:</string>
+    <string name="placeholder">Placeholder</string>
+    <string name="sure_text">Are you sure?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
 </resources>

@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity
 
         db = new DatabaseHandler(this);
 
+        byPassActivity();
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -129,5 +131,14 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(MainActivity.this, ListActivity.class));
             }
         }, 800);
+    }
+
+    public void byPassActivity(){
+        // Checks if database is empty; if not, then go to ListActivity and show all added items
+
+        if (db.getGroceriesCount() > 0){
+            startActivity(new Intent(MainActivity.this, ListActivity.class));
+            finish();
+        }
     }
 }
